@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: flantech-web
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn flantech_project.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5
+      - key: DJANGO_SETTINGS_MODULE
+        value: flantech_project.settings
+      - fromDatabase:
+          name: flantech-db
+          property: connectionString
+        key: DATABASE_URL
+
+databases:
+  - name: flantech-db
+    plan: free
+    postgresMajorVersion: "15"

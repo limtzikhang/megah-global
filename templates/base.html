@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flantech Mega H Management System</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; display: flex; height: 100vh; }
+        .left-pane { width: 250px; background-color: #2c3e50; color: white; padding: 20px; box-sizing: border-box; }
+        .left-pane a { display: block; color: #ecf0f1; text-decoration: none; padding: 10px; margin-bottom: 10px; border-radius: 4px; }
+        .left-pane a:hover { background-color: #34495e; }
+        .main-content { flex: 1; padding: 40px; box-sizing: border-box; background-color: #f5f6fa; overflow-y: auto; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn { background-color: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <div class="left-pane">
+        <h3>Mega H Panel</h3>
+        <a href="/">1. Homepage / Login</a>
+        <a href="/signup/">Sign Up</a>
+        <a href="/video/">2. Product Video</a>
+        <a href="/info/">3. Product Information</a>
+        <a href="/cart/">4. Add to Cart</a>
+        <a href="/payment/">5. Payment Gateway</a>
+    </div>
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
