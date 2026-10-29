@@ -18,6 +18,9 @@ INSTALLED_APPS = [
     'core', # Your main app
 ]
 
+# Paste the missing line right here:
+ROOT_URLCONF = 'flantech_project.urls'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # Static files management
